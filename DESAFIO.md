@@ -10,11 +10,13 @@ void change_parameters(int *cmd)
       {
           if (PAR_IMG())
           { 
-            start_go_sleep_alarm()
+            while(PAR_IMG())
+                {
+                    start_go_sleep_alarm()
+                }
             msg = ACK_R;
             send_msg(&msg);
             state = SLEEP;
-            
           }
           else
            { 
