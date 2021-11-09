@@ -1,0 +1,19 @@
+int get_event (event_t* event, event_manager* event_mgr)
+{
+        int new_tail = event_mgr->tail + 1 % EVENT_BUFFER_SIZE; 
+               
+        if(new_tail == event_mgr->head){
+            printf("Erro!");
+            return 0;
+        }
+        
+        else{
+            event = &event_mgr->tail[new_tail] 
+            event_mgr->tail = new_tail;
+            return 1;
+        }
+
+
+
+
+}
